@@ -65,7 +65,7 @@ window.REDSCAPES_PERSONNEL = {
     "clearance": "Level 04",
     "status": "AUTHORIZED",
     "expiration": "11/2008",
-    "quote": "The Cagoon is the best place for peace and serenity.",
+    "quote": "Think.",
     "codename": "Torpedo",
     "photo": "./assets/portraits/rs-0712.png"
   },
@@ -156,7 +156,7 @@ window.REDSCAPES_PERSONNEL = {
     "clearance": "Level 04",
     "status": "AUTHORIZED",
     "expiration": "11/2008",
-    "quote": "",
+    "quote": "Always finish the cock, never let it finish you.",
     "codename": "Inkwraith",
     "photo": "./assets/portraits/rs-0311.png"
   }
