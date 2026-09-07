@@ -13,9 +13,6 @@
     const queryId = new URLSearchParams(location.search).get("id");
     if (queryId) return queryId.trim().toUpperCase();
 
-    const match = location.pathname.match(/\/personnel\/([^/?#]+)/i);
-    if (match) return decodeURIComponent(match[1]).trim().toUpperCase();
-
     const hash = location.hash.replace(/^#/, "").trim();
     if (/^RS-[A-Z0-9-]+$/i.test(hash)) return hash.toUpperCase();
 
@@ -37,7 +34,7 @@
         </form>
 
         <div id="lookupMessage" class="template-note">
-          ${escapeHTML(message || "Template mode: no personnel records have been added yet.")}
+          ${escapeHTML(message || "Enter a personnel ID to retrieve a record.")}
         </div>
       </section>
     `;
@@ -53,11 +50,7 @@
   }
 
   function navigateToPersonnel(id) {
-    if (location.protocol === "file:") {
-      location.href = `?id=${encodeURIComponent(id)}`;
-      return;
-    }
-    location.href = `/personnel/${encodeURIComponent(id)}`;
+    location.href = `./?id=${encodeURIComponent(id)}`;
   }
 
   function renderError(id) {
@@ -66,8 +59,7 @@
         <p class="eyebrow">Record Retrieval Failure</p>
         <h1>Record<br>Unavailable</h1>
         <p>No personnel record is currently registered for <strong>${escapeHTML(id)}</strong>.</p>
-        <p class="template-note">This is expected while the database is still in template mode.</p>
-        <a class="back-link" href="/">← Return to personnel lookup</a>
+        <a class="back-link" href="./">← Return to personnel lookup</a>
       </section>
     `;
   }
@@ -138,7 +130,7 @@
         </footer>
       </article>
 
-      <a class="back-link" href="/">← Return to personnel lookup</a>
+      <a class="back-link" href="./">← Return to personnel lookup</a>
     `;
   }
 
