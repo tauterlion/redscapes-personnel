@@ -1,0 +1,1 @@
+Place final profile portraits in this folder. Example: rs-0302.jpg
